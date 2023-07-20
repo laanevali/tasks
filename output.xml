@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20230712 22:29:51.581" rpa="true" schemaversion="4">
+<suite id="s1" name="gherkin WebPage1" source="C:\Users\rebec\OneDrive\Documents\RobotFramework\Evitec\gherkin_WebPage1.robot">
+<test id="s1-t1" name="Search for a trip from Tallinn to Tartu in EN environment" line="12">
+<kw name="GIVEN browser is opened to Home Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${HOME URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230712 22:29:51.769" level="INFO">Opening browser 'Chrome' to base url 'https://www.tpilet.ee/'.</msg>
+<status status="PASS" starttime="20230712 22:29:51.768" endtime="20230712 22:29:57.841"/>
+</kw>
+<status status="PASS" starttime="20230712 22:29:51.768" endtime="20230712 22:29:57.841"/>
+</kw>
+<kw name="AND accepted cookies">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:web-cookies-accept</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230712 22:29:57.844" level="INFO">Clicking button 'id:web-cookies-accept'.</msg>
+<status status="PASS" starttime="20230712 22:29:57.843" endtime="20230712 22:29:57.941"/>
+</kw>
+<status status="PASS" starttime="20230712 22:29:57.843" endtime="20230712 22:29:57.941"/>
+</kw>
+<kw name="WHEN user has changed language to English">
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230712 22:29:57.942" endtime="20230712 22:29:57.944"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:web-languageselect-en</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230712 22:29:57.945" level="INFO">Clicking button 'id:web-languageselect-en'.</msg>
+<status status="PASS" starttime="20230712 22:29:57.945" endtime="20230712 22:29:58.295"/>
+</kw>
+<status status="PASS" starttime="20230712 22:29:57.942" endtime="20230712 22:29:58.295"/>
+</kw>
+<kw name="AND searched trip from Tallinn Coach Station to Tartu Coach Station" sourcename="Searched trip from ${departure} to ${destination}">
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>3</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230712 22:29:58.295" endtime="20230712 22:29:58.297"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:web-searchform-departureStop</arg>
+<arg>${departure}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 22:29:58.298" level="INFO">Typing text 'Tallinn Coach Station' into text field 'id:web-searchform-departureStop'.</msg>
+<status status="PASS" starttime="20230712 22:29:58.298" endtime="20230712 22:29:58.980"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:web-searchform-departureStop-list</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 22:29:58.980" level="INFO">Clicking element 'id:web-searchform-departureStop-list'.</msg>
+<status status="PASS" starttime="20230712 22:29:58.980" endtime="20230712 22:29:59.220"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:web-searchform-destinationStop</arg>
+<arg>${destination}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230712 22:29:59.220" level="INFO">Typing text 'Tartu Coach Station' into text field 'id:web-searchform-destinationStop'.</msg>
+<status status="PASS" starttime="20230712 22:29:59.220" endtime="20230712 22:29:59.338"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:web-searchform-destinationStop-list</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230712 22:29:59.338" level="INFO">Clicking element 'id:web-searchform-destinationStop-list'.</msg>
+<status status="PASS" starttime="20230712 22:29:59.338" endtime="20230712 22:29:59.400"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:web-searchform-search</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230712 22:29:59.400" level="INFO">Clicking button 'id:web-searchform-search'.</msg>
+<status status="PASS" starttime="20230712 22:29:59.400" endtime="20230712 22:29:59.491"/>
+</kw>
+<status status="PASS" starttime="20230712 22:29:58.295" endtime="20230712 22:29:59.491"/>
+</kw>
+<kw name="THEN browser is opened to Trip Page from Tallinn to Tartu">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:trips-panel-scroll-container</arg>
+<arg>8</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230712 22:29:59.492" endtime="20230712 22:29:59.701"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>${TRAVEL ENG URL}</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20230712 22:29:59.701" level="INFO">Current location contains 'https://www.tpilet.ee/en/travel?departureStop=tallinn&amp;destinationStop=tartu'.</msg>
+<status status="PASS" starttime="20230712 22:29:59.701" endtime="20230712 22:29:59.701"/>
+</kw>
+<status status="PASS" starttime="20230712 22:29:59.492" endtime="20230712 22:29:59.701"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230712 22:29:59.701" endtime="20230712 22:30:01.960"/>
+</kw>
+<status status="PASS" starttime="20230712 22:29:51.767" endtime="20230712 22:30:01.960"/>
+</test>
+<status status="PASS" starttime="20230712 22:29:51.581" endtime="20230712 22:30:01.962"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="gherkin WebPage1">gherkin WebPage1</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230712 22:29:51.759" level="ERROR">Error in file 'C:\Users\rebec\OneDrive\Documents\RobotFramework\Evitec\gherkin_WebPage1.robot' on line 4: Error in file 'C:\Users\rebec\OneDrive\Documents\RobotFramework\Evitec\WebPage1.robot' on line 10: Resource file with 'Tasks' section is invalid.</msg>
+</errors>
+</robot>
